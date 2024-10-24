@@ -116,40 +116,42 @@ void resetArr(arrayLength_t *arr) {
 }
 
 int main() {
-    // a) Declarar dos estructuras de tipo arrayLength_t de nombre al1 y al2
     arrayLength_t al1, al2;
 
-    // Inicializar ambos arrays
+    // Initialize both arrays
     initArray(&al1);
     initArray(&al2);
 
-    // b) Hacer que el array de al1 almacene los valores 0, 10, 20, ..., 90
+    // Populate al1 with values 0, 10, 20, ..., 90
     for (int i = 0; i < 10; ++i) {
         addElement(&al1, i * 10);
     }
 
-    // c) Mostrar la estructura almacenada en al1
+    // Print al1
+    printf("al1 after initialization:\n");
     printArr(&al1);
 
-    // d) Actualizar las posiciones impares del array para que almacenen 1, 3, 5, 7, 9
-    for (int i = 1; i < 10; i += 2) {
-        setElement(&al1, i, i);
+    // Update odd positions of al1 with values 1, 3, 5, 7, 9
+    for (int i = 0; i < 5; ++i) {
+        setElement(&al1, 2 * i + 1, 2 * i + 1);
     }
 
-    // e) Mostrar de nuevo la estructura
+    // Print al1 after updating odd positions
+    printf("al1 after updating odd positions:\n");
     printArr(&al1);
 
-    // f) Añadir al array de al2 las posiciones pares del array al1
+    // Add even positions of al1 to al2
     for (int i = 0; i < 10; i += 2) {
         addElement(&al2, al1.arrInt[i]);
     }
 
-    // g) Actualizar las posiciones finales del array de al2 para que almacenen los valores de 0 a 4
-    for (int i = al2.arrSize; i < 10; ++i) {
-        addElement(&al2, i - al2.arrSize);
+    // Update final positions of al2 with values 0 to 4
+    for (int i = 0; i < 5; ++i) {
+        addElement(&al2, i);
     }
 
-    // h) Mostrar la estructura al2
+    // Print al2
+    printf("al2 after adding even positions and updating final positions:\n");
     printArr(&al2);
 
     return 0;
