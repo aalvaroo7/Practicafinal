@@ -103,7 +103,7 @@ int main() {
     // b) Almacenar en al1 los valores 0, 10, 20, ..., 90
     // Se emplea un bucle para asignar valores secuenciales, un ejemplo de control de flujo.
     for (int i = 0; i < 10; ++i) {
-        setElement(&al1, i, i * 10);
+        addElement(&al1, i * 10);
     }
 
     // c) Mostrar la estructura almacenada en al1
@@ -119,15 +119,13 @@ int main() {
     printArr(&al1);
 
     // f) Añadir al array de al2 las posiciones pares del array al1
-    // Uso de addElement para llenar al2 con ciertos valores de al1, demostrando manejo de memoria.
     for (int i = 0; i < 10; i += 2) {
         addElement(&al2, al1.arrInt[i]);
     }
 
     // g) Actualizar las posiciones finales del array de al2 para que almacenen los valores de 0 a 4
-    // Control de flujo y modularidad al rellenar las posiciones restantes en al2.
-    for (int i = al2.arrSize; i < 10; ++i) {
-        addElement(&al2, i - al2.arrSize);
+    for (int i = al2.arrSize; i < 10 && i < al2.arrSize + 5; ++i) {
+        setElement(&al2, i, i - al2.arrSize);
     }
 
     // h) Mostrar la estructura al2
