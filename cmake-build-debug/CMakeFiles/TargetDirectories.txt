@@ -1,3 +1,0 @@
-C:/Users/alvar/CLionProjects/Practicafinal/cmake-build-debug/CMakeFiles/Practicafinal.dir
-C:/Users/alvar/CLionProjects/Practicafinal/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/alvar/CLionProjects/Practicafinal/cmake-build-debug/CMakeFiles/rebuild_cache.dir
